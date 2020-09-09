@@ -3,9 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
-  return (
-    <View style={styles.container}/>
-  );
+  return <View style={styles.container}></View>;
 }
 
 const styles:any = StyleSheet.create({
