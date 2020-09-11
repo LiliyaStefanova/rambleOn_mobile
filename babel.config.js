@@ -3,7 +3,8 @@ module.exports = function(api) {
   return {
     presets: ['babel-preset-expo',
               '@babel/preset-env',
-              '@babel/preset-react',
-              '@babel/plugin-proposal-class-properties'],
+              '@babel/preset-react'
+              ],
+    plugins: ["transform-class-properties"] 
   };
 };
