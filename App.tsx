@@ -3,8 +3,7 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import HomeScreen from "./src/screens/HomeScreen";
+import FontAwesome from "react-native-vector-icons/FontAwesome5";
 import HikesScreen from "./src/screens/HikesScreen";
 import PlanScreen from "./src/screens/PlanScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
@@ -19,20 +18,28 @@ export default function App() {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-            if (route.name === "Home") {
-              iconName = focused ? "home" : "home";
-            } else if (route.name === "Settings") {
-              iconName = focused ? "sliders" : "sliders";
+            switch (route.name) {
+              case "Hikes":
+                iconName = focused ? "walking" : "walking";
+                break;
+              case "Plan":
+                iconName = focused ? "mountain" : "mountain";
+                break;
+              case "Resources":
+                iconName = focused ? "toolbox" : "toolbox";
+                break;
+              case "Settings":
+                iconName = focused ? "sliders-h" : "sliders-h";
             }
+
             return <FontAwesome name={iconName} size={size} color={color} />;
           },
         })}
         tabBarOptions={{
-          activeTintColor: "tomato",
-          inactiveTintColor: "gray",
+          activeTintColor: "#604860",
+          inactiveTintColor: "#484848",
         }}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Hikes" component={HikesScreen} />
         <Tab.Screen name="Plan" component={PlanScreen} />
         <Tab.Screen name="Resources" component={ResourcesScreen} />

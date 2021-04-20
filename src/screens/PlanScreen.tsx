@@ -1,12 +1,15 @@
-import React, { FunctionComponent } from 'react';
-import { View, Text } from 'react-native';
+import React, { FunctionComponent } from "react";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import androidSafeArea from "../settings/androidSafeArea";
 
 const PlanScreen: FunctionComponent = () => {
   return (
-    <View>
+    <SafeAreaView style={androidSafeArea.AndroidSafeArea}>
       <Text>Plan Screen</Text>
-    </View>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({});
 
 export default PlanScreen;
